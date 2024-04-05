@@ -1,0 +1,19 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0",
+    "pg": "^8.11.5"
+  }
+}

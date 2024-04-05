@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/notepad.webp" type="image/x-icon">
+</head>
+<body>
+    <div class="top-panel">
+        <h1>Notepad</h1>
+    </div>
+    <div class="add-notes hidden">
+        <h3>Add</h3>
+        <form class="add-notes-form" action="/add-new-note" method="post" name="newnote">
+            <textarea id="note" name="note" rows="7" cols="80" class="type-new-note"></textarea><br>
+            <input type="submit" value="Submit" class="submit-new-note">
+        </form>
+    </div>
+    <div class="Content">
+        <ul>
+            <% for (let i = 0; i < arr.length; i++) { %>
+              <li>
+                <img src="images/delete-image.png" class="delete-icon">
+                <img src="images/edit-note.svg" class="edit-icon">
+                <p class="actualnoteelement"><%= arr[i].slice(1, -1) %></p>
+                <p class="hidden noteidnumber"><%= idarr[i] %></p>
+              </li>
+            <% } %>
+          </ul>
+                         
+    </div>
+    <div class="add-button" ><img src="images/add-image.png"></div>
+    <footer class="footer"></footer>
+    <form id="myForm" class="hidden" action="/delete-a-note" method="post">
+        <input type="hidden" id="myVariable" name="myVariable" value="">
+        <input type="hidden" id="myVariableid" name="myVariableid" value="">
+        <button type="button" onclick="submitForm()">Submit Form</button>
+    </form>
+    <div class="edit-notes hidden">
+        <h3>Edit</h3>
+        <form class="edit-notes-form" action="/edit-a-note" method="post">
+            <textarea id="editnotesid hidden" class="editnotesid" name="editnotesid"></textarea>
+            <textarea id="old-text" class="hidden old-text" name="oldtext"></textarea>
+            <textarea id="edit-input" name="editvalue" value="" class="type-edit-new-note" rows="7" cols="80"></textarea><br>
+            <button type="button" class="submit-edit-new-note">Submit Form</button>
+        </form>
+    </div>
+    
+    <script>
+
+        let oldnoneditedtext;
+        let neweditedtext;
+        let textid;
+
+        const addButton = document.querySelector(".add-button");
+        addButton.addEventListener("click", function() {
+            const addNotesElement = document.querySelector(".add-notes");
+            addNotesElement.classList.toggle("hidden");
+        });   
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".delete-icon").forEach(icon => {
+                icon.addEventListener("click", function() {
+                    var myValueid=this.parentNode.querySelector(".noteidnumber").textContent;
+                    console.log(myValueid);
+                    myValueid=parseInt(myValueid);
+                    document.getElementById('myVariableid').value = myValueid;
+                    document.getElementById('myForm').submit();
+                });
+            });
+        });
+        document.querySelectorAll(".edit-icon").forEach(function(icon) {
+            icon.addEventListener("click", function() {
+                document.querySelector(".edit-notes").classList.toggle("hidden");
+                oldnoneditedtext=this.parentNode.querySelector(".actualnoteelement").textContent.trim();
+                textid=this.parentNode.querySelector(".noteidnumber").textContent;
+                document.querySelector(".editnotesid").value=textid;
+                document.querySelector("#old-text").value=oldnoneditedtext;
+                document.querySelector(".type-edit-new-note").value=oldnoneditedtext;
+            });
+        });
+
+        document.querySelector(".submit-edit-new-note").addEventListener("click", function() {
+            document.querySelector(".type-edit-new-note").value="`"+document.querySelector(".type-edit-new-note").value+"`";
+            document.querySelector("#old-text").value="`"+document.querySelector("#old-text").value+"`";
+            document.querySelector('.edit-notes-form').submit();
+        });
+    </script>
+</body>
+</html>
