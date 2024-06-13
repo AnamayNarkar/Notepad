@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: #202124;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,7 +10,7 @@ body {
 .top-panel {
     height: 15vh;
     width: 100vw;
-    background-color: #FEBE10;
+    background-color: #f5ba13;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@ h1{
 .footer {
     height: 5vh;
     width: 100vw;
-    background-color: #FEBE10;
+    background-color: #f5ba13;
     position: fixed;
     bottom: 0;
     z-index: 10;
@@ -37,9 +37,10 @@ h1{
     position: fixed;
     bottom: 7vh;
     right: 1vw;
-    background-color: #FDDE6C;
+    background-color: #e0c067;
     content:"+";
     z-index: 11;
+    cursor: pointer;
 }
 
 input{
@@ -49,7 +50,7 @@ input{
 .add-notes{
     height:40%;
     width:45%;
-    background-color: #FDDE6C;
+    background-color: #e0c067;
     z-index:4;
     position: absolute;
     top: 50%;
@@ -130,7 +131,7 @@ p {
 .edit-notes{
     height:40%;
     width:45%;
-    background-color: #FDDE6C;
+    background-color:#e0c067 ;
     z-index:4;
     position: absolute;
     top: 50%;
