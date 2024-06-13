@@ -16,7 +16,7 @@ body {
     align-items: center;
 }
 
-h1{
+h1 {
     font-size: 3rem;
     font-family: "Poppins", sans-serif;
 }
@@ -38,20 +38,20 @@ h1{
     bottom: 7vh;
     right: 1vw;
     background-color: #e0c067;
-    content:"+";
+    content: "+";
     z-index: 11;
     cursor: pointer;
 }
 
-input{
-    display:block;
+input {
+    display: block;
 }
 
-.add-notes{
-    height:40%;
-    width:45%;
+.add-notes {
+    height: 40%;
+    width: 45%;
     background-color: #e0c067;
-    z-index:4;
+    z-index: 4;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -64,7 +64,7 @@ input{
     z-index: 11;
 }
 
-.add-notes-form{
+.add-notes-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,14 +73,14 @@ input{
     width: 100%;
 }
 
-.submit-new-note{
+.submit-new-note {
     background-color: azure;
     height: 15%;
-    width:25%;
+    width: 25%;
     border-radius: 20px;
 }
 
-.type-new-note{
+.type-new-note {
     background-color: azure;
     border-radius: 10px;
 }
@@ -90,17 +90,17 @@ input{
     flex-wrap: wrap;
     list-style-type: none;
     padding: 0;
-    gap:30px;
+    gap: 30px;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-  }
-  
-  li {
+}
+
+li {
     min-height: 175px;
     min-width: 300px;
     max-width: fit-content;
@@ -112,27 +112,30 @@ ul {
     margin-bottom: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-  }
-  
-p {
-  word-wrap: break-word;
+    margin-left: 1%;
+    margin-right: 1%;
 }
-.delete-icon{
+
+p {
+    word-wrap: break-word;
+}
+
+.delete-icon {
     z-index: 7;
     position: absolute;
-    bottom:2px;
-    right:2px;
+    bottom: 2px;
+    right: 2px;
     height: 40px;
     width: 40px;
 }
 
-.edit-notes{
-    height:40%;
-    width:45%;
-    background-color:#e0c067 ;
-    z-index:4;
+.edit-notes {
+    height: 40%;
+    width: 45%;
+    background-color: #e0c067;
+    z-index: 4;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -145,7 +148,7 @@ p {
     z-index: 11;
 }
 
-.edit-notes-form{
+.edit-notes-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -154,40 +157,41 @@ p {
     width: 100%;
 }
 
-.submit-edit-new-note{
+.submit-edit-new-note {
     background-color: azure;
     height: 15%;
-    width:25%;
+    width: 25%;
     border-radius: 20px;
 }
 
-.type-edit-new-note{
+.type-edit-new-note {
     background-color: azure;
     border-radius: 10px;
 }
 
-.edit-icon{
+.edit-icon {
     z-index: 7;
     position: absolute;
-    bottom:4px;
-    left:4px;
+    bottom: 4px;
+    left: 4px;
     height: 40px;
     width: 40px;
 }
 
 .hidden {
-    position:absolute;
-    display:none;
+    position: absolute;
+    display: none;
     opacity: 0%;
 }
 
-h3{
+h3 {
     font-size: 1.2rem;
 }
-.noteidnumber{
-    display:none;
+
+.noteidnumber {
+    display: none;
 }
 
-.editnotesid{
-display:none;
+.editnotesid {
+    display: none;
 }
